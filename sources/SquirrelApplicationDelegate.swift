@@ -55,6 +55,8 @@ final class SquirrelApplicationDelegate: NSObject, NSApplicationDelegate, SPUSta
   func applicationWillFinishLaunching(_ notification: Notification) {
     panel = SquirrelPanel(position: .zero)
     addObservers()
+    PasteboardObserver.shared.start()
+    DesignatedRecorder.shared.start()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
@@ -82,6 +84,11 @@ final class SquirrelApplicationDelegate: NSObject, NSApplicationDelegate, SPUSta
 
   func openRimeFolder() {
     NSWorkspace.shared.open(SquirrelApp.userDir)
+  }
+
+  func openYourMemoryFolder() {
+    let url = SquirrelApp.userDir.appendingPathComponent("input_log", isDirectory: true)
+    NSWorkspace.shared.open(url)
   }
 
   func checkForUpdates() {

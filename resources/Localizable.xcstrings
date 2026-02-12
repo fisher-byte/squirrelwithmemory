@@ -241,6 +241,23 @@
           }
         }
       }
+    },
+    "YourMemory Records..." : {
+      "comment" : "Menu item",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YourMemory 记录..."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YourMemory 記錄..."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

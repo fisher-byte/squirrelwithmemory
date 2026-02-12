@@ -239,6 +239,8 @@ final class SquirrelInputController: IMKInputController {
     wiki.target = self
     let update = NSMenuItem(title: NSLocalizedString("Check for updates...", comment: "Menu item"), action: #selector(checkForUpdates), keyEquivalent: "")
     update.target = self
+    let ymRecords = NSMenuItem(title: NSLocalizedString("YourMemory Records...", comment: "Menu item"), action: #selector(openYourMemoryFolder), keyEquivalent: "")
+    ymRecords.target = self
 
     let menu = NSMenu()
     menu.addItem(deploy)
@@ -247,6 +249,8 @@ final class SquirrelInputController: IMKInputController {
     menu.addItem(setting)
     menu.addItem(wiki)
     menu.addItem(update)
+    menu.addItem(.separator())
+    menu.addItem(ymRecords)
 
     return menu
   }
@@ -261,6 +265,10 @@ final class SquirrelInputController: IMKInputController {
 
   @objc func openLogFolder() {
     NSApp.squirrelAppDelegate.openLogFolder()
+  }
+
+  @objc func openYourMemoryFolder() {
+    NSApp.squirrelAppDelegate.openYourMemoryFolder()
   }
 
   @objc func openRimeFolder() {
@@ -386,7 +394,19 @@ private extension SquirrelInputController {
     let handled = rimeAPI.process_key(session, Int32(rimeKeycode), Int32(rimeModifiers))
     // print("[DEBUG] rime_keycode: \(rimeKeycode), rime_modifiers: \(rimeModifiers), handled = \(handled)")
 
-    // TODO add special key event postprocessing here
+    // Record control keys for context
+    if (rimeModifiers & kReleaseMask.rawValue) == 0 {
+      switch Int32(rimeKeycode) {
+      case XK_BackSpace:
+        LocalRecorder.shared.record(text: "[Backspace]", source: "key")
+      case XK_Return, XK_KP_Enter:
+        LocalRecorder.shared.record(text: "[Return]", source: "key")
+      case XK_Delete:
+        LocalRecorder.shared.record(text: "[Delete]", source: "key")
+      default:
+        break
+      }
+    }
 
     if !handled {
       let isVimBackInCommandMode = rimeKeycode == XK_Escape || ((rimeModifiers & kControlMask.rawValue != 0) && (rimeKeycode == XK_c || rimeKeycode == XK_C || rimeKeycode == XK_bracketleft))
@@ -417,7 +437,9 @@ private extension SquirrelInputController {
     var commitText = RimeCommit.rimeStructInit()
     if rimeAPI.get_commit(session, &commitText) {
       if let text = commitText.text {
-        commit(string: String(cString: text))
+        let string = String(cString: text)
+        commit(string: string)
+        LocalRecorder.shared.record(text: string, source: "commit")
       }
       _ = rimeAPI.free_commit(&commitText)
     }

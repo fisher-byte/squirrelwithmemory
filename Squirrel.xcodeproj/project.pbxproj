@@ -86,6 +86,9 @@
 		B397712F2BEECBED0093A49B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397712E2BEECBED0093A49B /* Main.swift */; };
 		B39771312BEEE4540093A49B /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B39771302BEEE4540093A49B /* InfoPlist.xcstrings */; };
 		B39771332BEEE4540093A49B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B39771322BEEE4540093A49B /* Localizable.xcstrings */; };
+		B39771372BEEE4540093A49B /* LocalRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39771342BEEE4540093A49B /* LocalRecorder.swift */; };
+		B39771382BEEE4540093A49B /* PasteboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39771352BEEE4540093A49B /* PasteboardObserver.swift */; };
+		B39771392BEEE4540093A49B /* DesignatedRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39771362BEEE4540093A49B /* DesignatedRecorder.swift */; };
 		B3EF08EA2F17125E00433A45 /* Rime.icon in Resources */ = {isa = PBXBuildFile; fileRef = B3EF08E92F17125E00433A45 /* Rime.icon */; };
 		D26434552706A15100857391 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D26434542706A15100857391 /* QuartzCore.framework */; };
 		E93074B70A5C264700470842 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93074B60A5C264700470842 /* InputMethodKit.framework */; };
@@ -293,6 +296,9 @@
 		B397712E2BEECBED0093A49B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main.swift; path = sources/Main.swift; sourceTree = "<group>"; };
 		B39771302BEEE4540093A49B /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = InfoPlist.xcstrings; path = resources/InfoPlist.xcstrings; sourceTree = "<group>"; };
 		B39771322BEEE4540093A49B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = resources/Localizable.xcstrings; sourceTree = "<group>"; };
+		B39771342BEEE4540093A49B /* LocalRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalRecorder.swift; path = sources/LocalRecorder.swift; sourceTree = "<group>"; };
+		B39771352BEEE4540093A49B /* PasteboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasteboardObserver.swift; path = sources/PasteboardObserver.swift; sourceTree = "<group>"; };
+		B39771362BEEE4540093A49B /* DesignatedRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DesignatedRecorder.swift; path = sources/DesignatedRecorder.swift; sourceTree = "<group>"; };
 		B3EF08E92F17125E00433A45 /* Rime.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Rime.icon; sourceTree = "<group>"; };
 		D26434542706A15100857391 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E93074B60A5C264700470842 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = /System/Library/Frameworks/InputMethodKit.framework; sourceTree = "<absolute>"; };
@@ -326,6 +332,9 @@
 				B397712A2BEE4C160093A49B /* SquirrelPanel.swift */,
 				B39771282BEDAF4A0093A49B /* SquirrelView.swift */,
 				B39771242BED899F0093A49B /* SquirrelConfig.swift */,
+				B39771342BEEE4540093A49B /* LocalRecorder.swift */,
+				B39771352BEEE4540093A49B /* PasteboardObserver.swift */,
+				B39771362BEEE4540093A49B /* DesignatedRecorder.swift */,
 				B35D2FE72BF00839009D156B /* BridgingFunctions.swift */,
 				B38E9B8F2BE9AE1E0036ABEF /* Squirrel-Bridging-Header.h */,
 			);
@@ -588,6 +597,9 @@
 				B397712B2BEE4C160093A49B /* SquirrelPanel.swift in Sources */,
 				B38E9B912BE9AE1E0036ABEF /* SquirrelApplicationDelegate.swift in Sources */,
 				B39771272BED9B250093A49B /* SquirrelTheme.swift in Sources */,
+				B39771372BEEE4540093A49B /* LocalRecorder.swift in Sources */,
+				B39771382BEEE4540093A49B /* PasteboardObserver.swift in Sources */,
+				B39771392BEEE4540093A49B /* DesignatedRecorder.swift in Sources */,
 				B35D2FE82BF00839009D156B /* BridgingFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
