@@ -8,11 +8,25 @@
 今由　[中州韻輸入法引擎／Rime Input Method Engine](https://rime.im)
 及其他開源技術強力驅動
 
-【鼠鬚管】輸入法
+【鼠鬚管 - YourMemory 版】
 ===
-[![Download](https://img.shields.io/github/v/release/rime/squirrel)](https://github.com/rime/squirrel/releases/latest)
-[![Build Status](https://github.com/rime/squirrel/actions/workflows/commit-ci.yml/badge.svg)](https://github.com/rime/squirrel/actions/workflows)
-[![GitHub Tag](https://img.shields.io/github/tag/rime/squirrel.svg)](https://github.com/rime/squirrel)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-YourMemory--Squirrel-blue?logo=github)](https://github.com/fisher-byte/squirrel-memory)
+
+这是 [Rime Squirrel（鼠鬚管）](https://github.com/rime/squirrel) 的一个特殊修改版本，旨在实现**完全本地、安全**的输入记录功能。
+
+核心特性
+---
+
+1.  **键入即存**：在输入法上屏（Commit）时，自动将转换后的文本记录到本地。
+2.  **粘贴即存**：实时监听剪贴板，将粘贴内容自动持久化到本地。
+3.  **指定即存**：通过快捷键 `Cmd + Shift + S` 快速捕获当前选中的文本（支持 Accessibility API 或剪贴板回退）。
+4.  **100% 本地化**：所有数据均存储在本地，不经过任何网络上传，保护你的输入隐私。
+
+数据存储
+---
+
+记录文件保存在 Rime 用户文件夹下的 `input_log/records.jsonl` 中。
+你可以通过输入法菜单中的 **"YourMemory Records..."** 快速打开该文件夹。
 
 式恕堂 版權所無
 
