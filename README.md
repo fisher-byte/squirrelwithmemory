@@ -28,6 +28,19 @@
 记录文件保存在 Rime 用户文件夹下的 `input_log/records.jsonl` 中。
 你可以通过输入法菜单中的 **"YourMemory Records..."** 快速打开该文件夹。
 
+项目文档
+---
+
+详细的设计文档和开发计划请参考 `docs/` 目录：
+- [产品需求文档 (PRD)](docs/PRD-InputMethod-MVP.md)
+- [开发计划 (DEV PLAN)](docs/DEV-PLAN-InputMethod-Mac.md)
+
+贡献与安装
+---
+
+如果你想基于此版本进行开发或安装，请参考 [Rime Squirrel](https://github.com/rime/squirrel) 的原始构建指南，或者直接下载我们的 [Release 版本](https://github.com/fisher-byte/squirrel-memory/releases)。
+
+
 式恕堂 版權所無
 
 授權條款：[GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
